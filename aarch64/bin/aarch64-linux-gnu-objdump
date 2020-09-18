@@ -1,0 +1,3 @@
+#!/bin/bash
+CC="`dirname $0`/../x86_64-petalinux-linux/usr/bin/aarch64-xilinx-linux/aarch64-xilinx-linux-objdump"
+$CC "$@"

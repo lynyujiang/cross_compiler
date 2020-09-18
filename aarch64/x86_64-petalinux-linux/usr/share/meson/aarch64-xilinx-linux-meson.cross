@@ -1,0 +1,21 @@
+[binaries]
+c = ['aarch64-xilinx-linux-gcc', '-march=armv8-a+crc', '-mtune=cortex-a72.cortex-a53', '--sysroot=/proj/esdt_sdk/mbodapati/2020.1_yocto_work/validation_tools/mingw_20200303/linux/lin/aarch64-linux/sysroots/aarch64-xilinx-linux']
+cpp = ['aarch64-xilinx-linux-g++', '-march=armv8-a+crc', '-mtune=cortex-a72.cortex-a53', '--sysroot=/proj/esdt_sdk/mbodapati/2020.1_yocto_work/validation_tools/mingw_20200303/linux/lin/aarch64-linux/sysroots/aarch64-xilinx-linux']
+ar = ['aarch64-xilinx-linux-ar']
+nm = ['aarch64-xilinx-linux-nm']
+ld = ['aarch64-xilinx-linux-ld', '--sysroot=/proj/esdt_sdk/mbodapati/2020.1_yocto_work/validation_tools/mingw_20200303/linux/lin/aarch64-linux/sysroots/aarch64-xilinx-linux']
+strip = ['aarch64-xilinx-linux-strip']
+pkgconfig = 'pkg-config'
+
+[properties]
+needs_exe_wrapper = true
+c_args = ['-O2', '-pipe', '-g', '-feliminate-unused-debug-types']
+c_link_args = ['-Wl,-O1', '-Wl,--hash-style=gnu', '-Wl,--as-needed']
+cpp_args = []
+cpp_link_args = ['-Wl,-O1', '-Wl,--hash-style=gnu', '-Wl,--as-needed']
+
+[host_machine]
+system = 'linux'
+cpu_family = 'x86_64'
+cpu = 'x86_64'
+endian = 'little'

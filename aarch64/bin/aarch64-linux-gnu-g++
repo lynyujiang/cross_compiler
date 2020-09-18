@@ -1,0 +1,4 @@
+#!/bin/bash
+CC="`dirname $0`/../x86*/usr/bin/aarch64-xilinx-linux/aarch64-xilinx-linux-g++"
+LIBC="`dirname $0`/../aarch64-xilinx-linux"
+$CC --sysroot=$LIBC "$@"

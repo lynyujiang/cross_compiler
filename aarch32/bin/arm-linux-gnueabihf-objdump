@@ -1,0 +1,3 @@
+#!/bin/bash
+CC="`dirname $0`/../x86_64-petalinux-linux/usr/bin/arm-xilinx-linux-gnueabi/arm-xilinx-linux-gnueabi-objdump"
+$CC "$@" 

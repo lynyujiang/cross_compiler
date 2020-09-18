@@ -1,0 +1,4 @@
+#!/bin/bash
+CC="`dirname $0`/../x86*/usr/bin/arm-xilinx-linux-gnueabi/arm-xilinx-linux-gnueabi-ld.gold"
+LIBC="`dirname $0`/../cortexa9t2hf-neon-xilinx-linux-gnueabi"
+$CC --sysroot=$LIBC "$@"

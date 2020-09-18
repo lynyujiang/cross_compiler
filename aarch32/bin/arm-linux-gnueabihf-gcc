@@ -1,0 +1,16 @@
+#!/bin/bash
+CC="`dirname $0`/../x86*/usr/bin/arm-xilinx-linux-gnueabi/arm-xilinx-linux-gnueabi-gcc"
+LIBC="`dirname $0`/../cortexa9t2hf-neon-xilinx-linux-gnueabi"
+FLAGS=" -mfpu=neon -mfloat-abi=hard"
+for i in "$@"
+do
+  case $i in
+    -msoft-float|-mfloat-abi=*)
+      FLAGS=""
+      ;;
+    *)
+      # do nothing
+      ;;
+  esac
+done
+$CC --sysroot=$LIBC "$@" $FLAGS
